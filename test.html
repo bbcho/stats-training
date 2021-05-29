@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>dddd</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="mermaid">
+    graph TD
+        subgraph prerequisites [ ]
+        301(FN-301) .-> |before| pre[[Prequisites]]
+        412(FN-412) .-> |before| pre
+        311(ACCTG-311) .-> |before| pre
+        413(FN-413) .-> |before or <br> durng first term| pre
+        end
+
+        subgraph common [Common Courses]
+        pre --> dscf[FIN-488 <br> DSCF]
+        pre --> Stathi[FIN-488 <br> Stathi]
+        pre .-> |before or <br> durng first term| 413b(FN-413)
+        dscf --> 4yrh1[Fourth Year - First Term]
+        Stathi --> 4yrh1[Fourth Year - First Term]
+        413b --> 4yrh1[Fourth Year - First Term]
+        end
+
+        style prerequisites fill:LightGreen,stroke:LightGreen,stroke-width:1px
+        style common fill:#3399ff,stroke:#3399ff,stroke-width:1px
+        style 413 fill:Orange,stroke:Orange,stroke-width:1px
+        style 413b fill:Orange,stroke:Orange,stroke-width:1px
+
+    </div>
+</body>
+
+</html>
